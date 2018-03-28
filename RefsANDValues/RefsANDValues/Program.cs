@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;
 
 namespace RefsANDValues
 {
@@ -12,29 +13,53 @@ namespace RefsANDValues
         public int I;
     }
 
-    public class float3
+    public struct float3
     {
         public float x;
         public float y;
         public float z;
     }
-    public class Vertex
+    public struct Vertex
     {
         public float3 Position;
         public float3 Normal;
         public float3 UVW;
     }
 
-    
+    public class Cfloat3
+    {
+        public float x;
+        public float y;
+        public float z;
+    }
+    public class CVertex
+    {
+        public float3 Position;
+        public float3 Normal;
+        public float3 UVW;
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
+            int vertices = 10000000;
+            long a = GC.GetTotalMemory(true) / 1024;
+            // Gibt Speicherverbrauch beim Start
+            Console.WriteLine(a + " KB with " + vertices + " vertices ");
+
+            // Startet Zeitmessung
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            Vertex[] VertexArray = new Vertex[1000000];
+            // erstellt Class und Structs
+            //CreateStruct(vertices);
+            //CreateClass(vertices);
+
+
+
+         
+            Vertex[] VertexArray = new Vertex[vertices];
 
             for (int i = 0; i < VertexArray.Length; i++)
             {
@@ -44,10 +69,22 @@ namespace RefsANDValues
                     Normal = new float3 { x = i, y = i, z = i },
                     UVW = new float3 { x = i, y = i, z = i }
                 };
-
-
             }
-            Console.WriteLine(stopwatch.ElapsedMilliseconds);
+
+
+
+            //Gibt Zeit zum erstellen 
+            Console.WriteLine(stopwatch.ElapsedMilliseconds + " Milliseconds with " + vertices + " vertices ");
+
+            a = GC.GetTotalMemory(true) /1024 / 1024;
+
+            Console.WriteLine(a + " MB with " + vertices + " vertices ");
+
+            Console.Read();
+
+
+
+
             //SIZEOF
 
 
@@ -94,7 +131,10 @@ namespace RefsANDValues
             Console.WriteLine("a:" + a.I + " b: " + b.I);
             */
 
-            Console.ReadLine();
+            //Console.ReadLine();
+
+
         }
+
     }
 }

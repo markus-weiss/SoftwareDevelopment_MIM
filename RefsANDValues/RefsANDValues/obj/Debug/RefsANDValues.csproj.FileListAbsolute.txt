@@ -5,3 +5,10 @@ C:\Users\R510LD\source\repos\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues
 C:\Users\R510LD\source\repos\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.csproj.CoreCompileInputs.cache
 C:\Users\R510LD\source\repos\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.exe
 C:\Users\R510LD\source\repos\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.pdb
+C:\SE_MIM\RefsANDValues\RefsANDValues\bin\Debug\RefsANDValues.exe.config
+C:\SE_MIM\RefsANDValues\RefsANDValues\bin\Debug\RefsANDValues.exe
+C:\SE_MIM\RefsANDValues\RefsANDValues\bin\Debug\RefsANDValues.pdb
+C:\SE_MIM\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.csprojResolveAssemblyReference.cache
+C:\SE_MIM\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.csproj.CoreCompileInputs.cache
+C:\SE_MIM\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.exe
+C:\SE_MIM\RefsANDValues\RefsANDValues\obj\Debug\RefsANDValues.pdb
