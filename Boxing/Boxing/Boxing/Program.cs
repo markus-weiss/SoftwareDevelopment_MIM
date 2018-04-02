@@ -47,20 +47,29 @@ namespace Boxing
     {
         static void Main(string[] args)
         {
+
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            
+
+            long d = GC.GetTotalMemory(true);
+            Console.WriteLine("time: " + stopwatch.Elapsed + " Memory: " + d);
+
+            Console.WriteLine(" ");
             StructStandart n = new StructStandart();
             StructStandart m = new StructStandart();
             Console.WriteLine(n.Equals(m) + " Normal Equals a gleich b ? ");
             Console.WriteLine(n.GetHashCode() + " : " + m.GetHashCode() + " Normal Hash");
-            Console.WriteLine(stopwatch.Elapsed + " Milliseconds with");
+            d = GC.GetTotalMemory(true);
+            Console.WriteLine("time: " + stopwatch.Elapsed + " Memory: " + d);
 
+            Console.WriteLine(" ");
             Complex a = new Complex();
             Complex b = new Complex();
             Console.WriteLine(a.Equals(b) + " Overwritten a gleich b ? ");
             Console.WriteLine(a.GetHashCode() + " : " + a.GetHashCode() + " Get Hash overwriten");
-            Console.WriteLine(stopwatch.Elapsed + " Milliseconds with ");
+            d = GC.GetTotalMemory(true);
+            Console.WriteLine("time: " + stopwatch.Elapsed + " Memory: " + d);
 
 
             //Console.WriteLine(true ^ false);
