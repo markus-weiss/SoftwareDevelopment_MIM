@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 
+
 namespace RefsANDValues
 {
     public class Enemy
@@ -43,6 +44,7 @@ namespace RefsANDValues
     {
         static void Main(string[] args)
         {
+            /*
             int vertices = 10000000;
             long a = GC.GetTotalMemory(true) / 1024;
             // Gibt Speicherverbrauch beim Start
@@ -69,21 +71,31 @@ namespace RefsANDValues
                     Normal = new float3 { x = i, y = i, z = i },
                     UVW = new float3 { x = i, y = i, z = i }
                 };
+                
             }
 
+            
+            int outPut = 1000;
 
+            Console.WriteLine(VertexArray[outPut].Position.x + " " +
+                                VertexArray[outPut].Normal.x + " " +
+                                VertexArray[outPut].UVW.x + " ");
+                                
 
             //Gibt Zeit zum erstellen 
             Console.WriteLine(stopwatch.ElapsedMilliseconds + " Milliseconds with " + vertices + " vertices ");
-
             a = GC.GetTotalMemory(true) /1024 / 1024;
-
             Console.WriteLine(a + " MB with " + vertices + " vertices ");
-
             Console.Read();
+            */
 
 
-
+            int i = 42;
+            object o = i;
+            o = 43;
+            int j = (int)o;
+            Console.WriteLine("i is: " + i + "; o is: " + o + "; j is: " + j);
+            Console.Read();
 
             //SIZEOF
 
