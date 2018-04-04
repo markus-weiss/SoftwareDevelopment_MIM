@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace Boxing
 {
 
-    public struct Complex
+    public class Complex
     {
         public double m_Re;
         public double m_Im;
@@ -39,7 +39,7 @@ namespace Boxing
     
     
 
-    public struct StructStandart{
+    public class StructStandart{
         public float f;
     }
 
