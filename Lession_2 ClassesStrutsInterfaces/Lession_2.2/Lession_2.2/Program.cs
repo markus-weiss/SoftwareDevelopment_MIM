@@ -81,20 +81,27 @@ namespace Lession_2._2
 
     public abstract class Shape2D
     {
-        public string name;
+        public string name = "asdf";
         public abstract double CalculateArea(); // Polymorphe methode
     }
 
-    public class Rect
+    public class Rect : Shape2D
     {
+        
         public int height;
         public int width;
 
-        public double CalculateArea(int a , int b)
+        public override double CalculateArea()
+        {
+            throw new NotImplementedException();
+        }
+
+        /*
+        public override double CalculateArea(int a , int b)
         {
             return a * b;
         }
-        
+        */
     }
 
     public class Circle
@@ -119,16 +126,17 @@ namespace Lession_2._2
         double CalculateArea(); // Polymorphe methode
     }
 
-    public class Cube
+    public class Cube : Shape3D
     {
         public int height;
         public int width;
         public int lenght;
 
 
-        public double CalculateArea(int a, int b, int c)
+
+        public double CalculateArea()
         {
-            return a * b * c;
+            //return /*a * b * c*/true;
         }
 
     }
