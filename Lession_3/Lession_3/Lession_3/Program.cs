@@ -21,8 +21,10 @@ namespace Lession_3
 
     public class Calculator
     {
-        public ProgressReporterDelegate ProgressReporter;
-        public ResultReceiverDelegate  ResultReceiver;
+        // Kann mit event mehrere Delegates speichert
+        // Jeder kann immer nur sein eigenes event wieder löschen
+        public event ProgressReporterDelegate ProgressReporter;
+        public event ResultReceiverDelegate  ResultReceiver;
 
         public void StartSomeLenghtCalculation()
         {
@@ -64,6 +66,10 @@ namespace Lession_3
             if (i % 10 == 0)
                 Console.WriteLine(i + "% Berechnet");
         }
+        static void ReportOtherProgress(int i)
+        {
+                Console.Write(".");
+        }
 
         static void ReceiveResult(int i)
         {
@@ -73,14 +79,15 @@ namespace Lession_3
         static void Main(string[] args)
         {
             Calculator myCalculator = new Calculator();
-            myCalculator.ProgressReporter = ReportProgress;
-            myCalculator.ResultReceiver = ReceiveResult;
+            // mit += wird es der Liste der ProgressReportEvents hinzugefügt
+            myCalculator.ProgressReporter += ReportProgress;
+            myCalculator.ProgressReporter += ReportOtherProgress;
+
+            myCalculator.ResultReceiver += ReceiveResult;
             myCalculator.StartSomeLenghtCalculation();
 
-            Calculator C = new Calculator();
-            C.ProgressReporter = ReportProgress;
-            C.ResultReceiver = ReceiveResult;
-            C.StartSomeLenghtCalculation();
+
+
 
             Console.WriteLine("Calculation just started but not finished.");
 
